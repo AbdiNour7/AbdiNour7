@@ -15,7 +15,7 @@
     />
   </head>
   <body>
-    <header class="container">
+    <header class="header">
       <!-- humburger -->
       <div class="hamburger">
         <i class="fa-solid fa-bars" data-visible="true"></i>
@@ -38,6 +38,19 @@
 
       </nav>
 
+      <!-- mobile and tablet  -->
+      <nav class="mobile-menu" data-visible="false">
+        <div class="navigation">
+            <h1>TRAINING <em>STUDIO</em></h1>
+            <ul class="menus-link">
+                <li><a href="#"class="home">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SCHULES</a></li>
+                <li ><a href="#">CONTACTS</a></li>
+                <button class="btn-primary">SIGN UP</button>
+                </ul>
+        </div>
+    </nav>
       
       <div class="hero">
         <video autoplay loop muted plays-inline class="background-clip">
@@ -51,8 +64,8 @@
       </div>
     </header>
 
-
-      <!-- content -->
+<!-- 
+    content  -->
       <section class="section-heading">
         <h1>CHOOSE <em> PROGRAM</em></h1>
         <img
@@ -519,25 +532,27 @@
       </div>
 
 
-    <script>
-      const hamburger = document.querySelector(".hamburger");
-      const navigation = document.querySelector(".navigation");
-      const icons = document.querySelectorAll("i");
+      <script>
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const icons = document.querySelectorAll("i");
 
-      hamburger.addEventListener("click", function (event) {
-        const isVisible = navigation.getAttribute("data-visible");
-        if (isVisible == "true") {
-          // qari hiding
-          navigation.setAttribute("data-visible", "false");
-          icons[0].setAttribute("data-visible", "true");
-          icons[1].setAttribute("data-visible", "false");
-        } else if (isVisible == "false") {
-          // soo bandhig showing
-          navigation.setAttribute("data-visible", "true");
-          icons[0].setAttribute("data-visible", "false");
-          icons[1].setAttribute("data-visible", "true");
-        }
-      });
+        hamburger.addEventListener("click", function (event) {
+            const isVisible = mobileMenu.getAttribute('data-visible');
+            if (isVisible == "true") {
+                // qari hiding
+                mobileMenu.setAttribute('data-visible', "false");
+                icons[0].setAttribute('data-visible', "true");
+                icons[1].setAttribute('data-visible', "false");
+            } else if (isVisible == "false") {
+                // soo bandhig showing
+                mobileMenu.setAttribute('data-visible', "true");
+                icons[0].setAttribute('data-visible', "false");
+                icons[1].setAttribute('data-visible', "true");
+            }
+        });
+
+
     </script>
   </body>
 </html>
